@@ -14,8 +14,8 @@ print('VID2015 Data:')
 VID_base_path = args.data
 ann_base_path = join(VID_base_path, 'Annotations/VID/train/')
 img_base_path = join(VID_base_path, 'Data/VID/train/')
-sub_sets = sorted({'a', 'b', 'c', 'd', 'e'})
-# sub_sets = sorted({'ILSVRC2015_VID_train_0000', 'ILSVRC2015_VID_train_0001', 'ILSVRC2015_VID_train_0002', 'ILSVRC2015_VID_train_0003'})
+# sub_sets = sorted({'a', 'b', 'c', 'd', 'e'})
+sub_sets = sorted({'ILSVRC2015_VID_train_0000', 'ILSVRC2015_VID_train_0001'})
 total_frame = 0
 
 vid = []
