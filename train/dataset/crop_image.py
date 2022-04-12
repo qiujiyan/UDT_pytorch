@@ -14,7 +14,7 @@ parse.add_argument('-p', '--padding', dest='padding', default=2, type=float, hel
 
 args = parse.parse_args()
 
-print args
+print (args)
 
 
 def crop_hwc(image, bbox, out_sz, padding=(0, 0, 0)):
@@ -49,10 +49,13 @@ count = 0
 begin_time = time.time()
 for subset in vid:
     for video in subset:
-    	frames = video['frame']
-    	n_frames = len(frames)
-    	for f, frame in enumerate(frames):
-            img_path = join(video['base_path'], frame['img_path'])
+        frames = video['frame']
+        n_frames = len(frames)
+        for f, frame in enumerate(frames):
+            print('video.base_path',video['base_path'])
+            print('frame.img_path',frame['img_path'])
+            img_path = join(video['base_path'], frame['img_path'].split)
+            print('img_path',img_path)
             im = cv2.imread(img_path)
             avg_chans = np.mean(im, axis=(0, 1))
             img_sz = frame['frame_sz']
@@ -77,8 +80,8 @@ template_id = np.where(lmdb['up_index'] > 1)[0]  # NEVER use the last frame as t
 rand_split = np.random.choice(len(template_id), len(template_id))
 lmdb['train_set'] = template_id[rand_split[:(len(template_id)-num_val)]]
 lmdb['val_set'] = template_id[rand_split[(len(template_id)-num_val):]]
-print len(lmdb['train_set'])
-print len(lmdb['val_set'])
+print (len(lmdb['train_set']))
+print (len(lmdb['val_set']))
 
 # to list for json
 lmdb['train_set'] = lmdb['train_set'].tolist()
