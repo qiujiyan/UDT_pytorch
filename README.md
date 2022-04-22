@@ -1,3 +1,8 @@
+# Whats new?
+- update for new version Pytorch 1.11
+- python3 print function 
+- some dataset json file  
+
 # UDT_pytorch
 This repository contains a Python *reimplementation* of the **Unsupervised Deep Tracking** 
 
